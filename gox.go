@@ -358,3 +358,9 @@ func (p *exactCoverProblem) RowIsSolution(name string) error {
 	p.pushRowToSolution(header)
 	return nil
 }
+
+type ExactCoverSolver interface {
+	RowIsSolution(string) error
+	Rows() []string
+	Solve() [][]string
+}
